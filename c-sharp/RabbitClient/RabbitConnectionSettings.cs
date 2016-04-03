@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RabbitClient
+{
+    public class RabbitConnectionSettings
+    {
+        public RabbitConnectionSettings()
+        {
+            VirtualHost = "/";
+            Port = 5672;
+        }
+
+        public string HostName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string VirtualHost { get; set; }
+        public int Port { get; set; }
+    }
+}
