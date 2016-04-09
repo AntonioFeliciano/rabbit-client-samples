@@ -9,8 +9,11 @@ import java.io.IOException;
  * Created by Dalinar on 4/3/2016.
  */
 public class BasicRabbitConsumer extends DefaultConsumer {
-    public BasicRabbitConsumer(Channel channel) {
+    private final BasicRabbitClient basicRabbitClient;
+
+    public BasicRabbitConsumer(Channel channel, BasicRabbitClient basicRabbitClient) {
         super(channel);
+        this.basicRabbitClient = basicRabbitClient;
     }
 
     @Override
@@ -18,8 +21,8 @@ public class BasicRabbitConsumer extends DefaultConsumer {
             throws IOException {
         String jsonBody = new String(body, "UTF-8");
         Gson gson = new Gson();
-        //Deserialize with gson.fromJson
-        //Process the message
+        //Deserialze body using gson
+        //process message
         getChannel().basicAck(envelope.getDeliveryTag(), false);
     }
 }

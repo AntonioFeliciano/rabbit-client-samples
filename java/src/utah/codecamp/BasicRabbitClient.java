@@ -27,7 +27,7 @@ public class BasicRabbitClient {
     public void publishMessageToExchange(String exchangeName, Object message) throws IOException{
         AMQP.BasicProperties.Builder builder = new AMQP.BasicProperties.Builder();
         Gson gson = new Gson();
-        String messageJson = gson.toJson(gson);
+        String messageJson = gson.toJson(message);
         //deliveryMode(1) means that RabbitMQ will only write the message to disk if the node needs to free RAM
         channel.basicPublish(exchangeName, "", builder.deliveryMode(1).build(), messageJson.getBytes(Charset.forName("UTF-8")));
     }
@@ -36,7 +36,7 @@ public class BasicRabbitClient {
         channel.queueDeclare(queueName, true, false, false, null);
         channel.queueBind(queueName, exchangeName, "");
 
-        String consumerTag = channel.basicConsume(queueName, false, new BasicRabbitConsumer(channel));
+        String consumerTag = channel.basicConsume(queueName, false, new BasicRabbitConsumer(channel, this));
         return consumerTag;
     }
 
