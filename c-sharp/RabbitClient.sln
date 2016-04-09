@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitClient", "RabbitClient.csproj", "{3A1777C3-F8CE-4FE7-B9CF-3C3259F4A97A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitClient", "RabbitClient\RabbitClient.csproj", "{3A1777C3-F8CE-4FE7-B9CF-3C3259F4A97A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Starter", "CodeCamp.Starter\CodeCamp.Starter.csproj", "{7EE3920F-5556-44A3-A60B-442E9FAC66CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3A1777C3-F8CE-4FE7-B9CF-3C3259F4A97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A1777C3-F8CE-4FE7-B9CF-3C3259F4A97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A1777C3-F8CE-4FE7-B9CF-3C3259F4A97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE3920F-5556-44A3-A60B-442E9FAC66CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE3920F-5556-44A3-A60B-442E9FAC66CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE3920F-5556-44A3-A60B-442E9FAC66CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE3920F-5556-44A3-A60B-442E9FAC66CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
