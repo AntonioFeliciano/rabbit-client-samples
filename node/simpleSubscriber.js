@@ -13,6 +13,6 @@ module.exports = {
         })
     },
     cancelSubscribing: function(channel){
-        channel.cancel(consumerTag);
+        channel.cancel(this.consumerTag);
     } 
 }
