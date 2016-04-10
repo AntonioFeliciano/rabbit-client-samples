@@ -5,6 +5,8 @@ Sample projects for publishing/subscribing to RabbitMQ in a variety of languages
 
 Just in time for Code Camp 2016, I'm pleased to announce the opening of an artisinal pizza shop, "House Asynch Pizza".  Today only, we're running a special for anyone who orders using our special RabbitMQ ordering system.  With each order, you'll recieve a special coupon that can be used for 50% off a subsequent order.  The API for "House Asynch Pizza" follows.
 
+This sample code can be found at https://github.com/NeilSorensen/rabbit-client-samples.  The server code can be found at https://github.com/NeilSorensen/async-pizza-server.  Both are available under the MIT license.
+
 ### Conventions
 
 All exchanges are durable fanout exchanges.  Exchange names use snake_case, and queues should be named following this pattern: `exchange_name=>subscriber_name`.
