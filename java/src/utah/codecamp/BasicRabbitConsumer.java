@@ -21,7 +21,7 @@ public class BasicRabbitConsumer extends DefaultConsumer {
             throws IOException {
         String jsonBody = new String(body, "UTF-8");
         Gson gson = new Gson();
-        //Deserialze body using gson
+        //TODO: Deserialze body using gson
         //process message
         getChannel().basicAck(envelope.getDeliveryTag(), false);
     }

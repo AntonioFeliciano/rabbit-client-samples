@@ -63,3 +63,25 @@ pizzas.toppings | A list of toppings for the desired pizza.  House Asynch Pizza 
     ]
 }
 ```
+
+## Languages
+
+Read below for basic documentation on each of the client samples
+
+### C#
+
+`SimpleRabbitClient` provides a simplified interface with RabbitMQ, providing both subscriber and publisher functionality.  To publish a message to an exchange, use `PublishToExchange`, providing an exchange name and an object to serialize as the message body.  To recieve messages, call `StartListeningToQueue`.  This will create a queue, bind it to the specified exchange, and start consuming from that queue.  When a message is recieved, it will deserialize it into an object and pass it to `onMessageRecieved`.  After `onMessageRecieved` completes, it sends an ACK to rabbit to finish the message processing.
+
+This code depends on `newtonsoft.json` to serialize and deserialize json, and `RabbitMQ.Client` for Rabbit operations.  Both are available via nuget.org
+
+### Java
+
+`BasicRabbitClient` provides a simple interface for interacting with RabbitMQ.  To publish a message to an exchange, use `publishMessageToExchange`.  To start subscribing to messages, use `startConsumingMessages`, which will create a queue, bind it to the specified exchange, and start consuming messages.  In order to handle the messages, you need to extend `com.rabbitmq.client.DefaultConsumer` and override `handleDelivery`.  In this case, `BasicRabbitConsumer` is already configured to ACK messages correctly, so you just need to fill in the current `//TODO` comment.
+
+This code depends on `gson` for JSON serialization and `amqp-client` for Rabbit operations, both downloaded from Maven.
+
+### node.js
+
+The node implementation of rabbit uses `amqp://` urls for configuration, so I've provided `rabbitUrl.js` as a convienient way to build the correct URL.  `simplePublisher.js` provides a a publish method, taking a channel, exchange name, and a message. `simplePublisher.js` provides a method to begin listening to a queue.  It will create the queue, bind it to the specified exchange, and begin consuming messages.  Upon recieving a message, it will deserialize the message body into an object, and pass it into `onRecieved`.  Once your message processing is finished, it returns an ACK to rabbit.
+
+This code depends on `amqplib`, available via npm  
